@@ -22,18 +22,19 @@ return 0;
    #include <stdio.h>
 
 int main() {
-    int v[5];
 
-    for (int i = 0; i < 5; i++) {
+int v[5];
+
+   for (int i = 0; i < 5; i++) {
         printf("Digite o %d numero: ", i + 1);
         scanf("%d", &v[i]);
     }
 
-    printf("Vetor na ordem inversa: ");
-    for (int i = 4; i >= 0; i--) {
+   printf("Vetor na ordem inversa: ");
+   for (int i = 4; i >= 0; i--) {
         printf("%d ", v[i]);
     }
-    printf("\n");
+   printf("\n");
 
-    return 0;
+   return 0;
 }
