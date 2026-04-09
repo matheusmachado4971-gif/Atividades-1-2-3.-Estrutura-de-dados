@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct No {
+    char dado;
+    struct No *prox;
+} No;
+
+typedef struct {
+    No *topo;
+} Pilha;
+
+void inicializar(Pilha *p) {
+    p->topo = NULL;
+}
+
+int isEmpty(Pilha *p) {
+    return p->topo == NULL;
+}
+
+//continuar a partir da linha 20 do desafio2//

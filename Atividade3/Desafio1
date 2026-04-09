@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Cliente {
+    int id;
+    int tempoAtendimento;
+    struct Cliente *prox;
+} Cliente;
+
+typedef struct {
+    Cliente *inicio;
+    Cliente *fim;
+} Fila;
+
+void inicializarFila(Fila *fila) {
+    fila->inicio = NULL;
+    fila->fim = NULL;
+}
+
+int filaVazia(Fila *fila) {
+    return fila->inicio == NULL;
+}
+
+void enqueue(Fila *fila, int id, int tempoAtendimento) {
+    Cliente *novo = (Cliente *)malloc(sizeof(Cliente));
+    if (novo == NULL) {
+        printf("Erro de alocacao de memoria.\n");
+        exit(1);
+    }
+
+    // continuar a partir da linha 29 Ativ3Desafio1//

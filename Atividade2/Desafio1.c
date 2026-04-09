@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct No {
+    char dado;
+    struct No *prox;
+} No;
+
+typedef struct {
+    No *topo;
+} Pilha;
+
+void inicializar(Pilha *p) {
+    p->topo = NULL;
+}
+
+int isEmpty(Pilha *p) {
+    return p->topo == NULL;
+}
+
+void push(Pilha *p, char c) {
+    No *novo = (No *)malloc(sizeof(No));
+    if (novo == NULL) {
+        printf("Erro de alocacao de memoria.\n");
+        exit(1);
+    }
+
+    novo->dado = c;
+    novo->prox = p->topo;
+    p->topo = novo;
+}
+
+//Continuar a partir da linha 32 do desafio1//
