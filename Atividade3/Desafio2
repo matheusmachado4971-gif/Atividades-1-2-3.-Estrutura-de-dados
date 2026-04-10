@@ -61,3 +61,26 @@ Documento *dequeue(FilaPrioridade *fila) {
 }
 
     // continuar a partir da linha 61 Ativ3Desafio2//
+
+    void exibirFila(FilaPrioridade *fila) {
+    Documento *atual = fila->inicio;
+    printf("\n--- Fila de Impressao ---\n");
+    while (atual != NULL) {
+        printf("ID: %d | Paginas: %d | Prioridade: %d\n",
+               atual->id, atual->paginas, atual->prioridade);
+        atual = atual->prox;
+    }
+}
+
+
+void liberarFila(FilaPrioridade *fila) {
+    Documento *atual = fila->inicio;
+    while (atual != NULL) {
+        Documento *temp = atual;
+        atual = atual->prox;
+        free(temp);
+    }
+    fila->inicio = NULL;
+}
+
+//continuar a partir da linha 84 Ativ3Desafio2//
