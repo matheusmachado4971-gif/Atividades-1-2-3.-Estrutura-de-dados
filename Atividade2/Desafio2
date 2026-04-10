@@ -30,5 +30,17 @@ void push(Pilha *p, char c) {
     novo->prox = p->topo;
     p->topo = novo;
 }
-
 //continuar a partir da linha 32 do desafio2//
+char pop(Pilha *p) {
+    if (isEmpty(p)) {
+        return '\0';
+    }
+
+    No *temp = p->topo;
+    char valor = temp->dado;
+    p->topo = temp->prox;
+    free(temp);
+
+    return valor;
+}
+//continuar a partir da linha 45 do desafio2//
