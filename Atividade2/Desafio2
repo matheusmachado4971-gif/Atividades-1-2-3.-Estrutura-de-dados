@@ -19,4 +19,16 @@ int isEmpty(Pilha *p) {
     return p->topo == NULL;
 }
 
-//continuar a partir da linha 20 do desafio2//
+void push(Pilha *p, char c) {
+    No *novo = (No *)malloc(sizeof(No));
+    if (novo == NULL) {
+        printf("Erro de alocacao de memoria.\n");
+        exit(1);
+    }
+
+    novo->dado = c;
+    novo->prox = p->topo;
+    p->topo = novo;
+}
+
+//continuar a partir da linha 32 do desafio2//

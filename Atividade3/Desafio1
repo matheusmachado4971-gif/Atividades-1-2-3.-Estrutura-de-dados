@@ -28,7 +28,11 @@ void enqueue(Fila *fila, int id, int tempoAtendimento) {
         exit(1);
     }
 
+<<<<<<< HEAD
    novo->id = id;
+=======
+novo->id = id;
+>>>>>>> 296125f6d86b9d92f1012afce9e048b6c2fade17
     novo->tempoAtendimento = tempoAtendimento;
     novo->prox = NULL;
 
@@ -41,6 +45,7 @@ void enqueue(Fila *fila, int id, int tempoAtendimento) {
     }
 }
 
+<<<<<<< HEAD
 Cliente *dequeue(Fila *fila) {
     if (filaVazia(fila)) {
         return NULL;
@@ -68,3 +73,6 @@ void liberarFila(Fila *fila) {
 }
 
     // continuar a partir da linha 68 Ativ3Desafio1//
+=======
+// continuar a partir da linha 42 Ativ3Desafio1//
+>>>>>>> 296125f6d86b9d92f1012afce9e048b6c2fade17

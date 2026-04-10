@@ -31,4 +31,23 @@ void push(Pilha *p, char c) {
     p->topo = novo;
 }
 
-//Continuar a partir da linha 32 do desafio1//
+char pop(Pilha *p) {
+    if (isEmpty(p)) {
+        return '\0';
+    }
+
+    No *temp = p->topo;
+    char valor = temp->dado;
+    p->topo = temp->prox;
+    free(temp);
+
+    return valor;
+}
+
+int combina(char abertura, char fechamento) {
+    return (abertura == '(' && fechamento == ')') ||
+           (abertura == '{' && fechamento == '}') ||
+           (abertura == '[' && fechamento == ']');
+}
+
+//Continuar a partir da linha 51 do desafio1//
