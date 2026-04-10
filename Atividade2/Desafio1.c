@@ -51,3 +51,25 @@ int combina(char abertura, char fechamento) {
 }
 
 //Continuar a partir da linha 51 do desafio1//
+int expressaoValida(char str[]) {
+    Pilha p;
+    inicializar(&p);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+
+        if (c == '(' || c == '{' || c == '[') {
+            push(&p, c);
+        } else if (c == ')' || c == '}' || c == ']') {
+            char topo = pop(&p);
+
+            if (topo == '\0' || !combina(topo, c)) {
+                return 0;
+            }
+        }
+    }
+
+    return isEmpty(&p);
+}
+
+//Continuar a partir da linha 73 //
