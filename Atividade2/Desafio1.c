@@ -73,3 +73,22 @@ int expressaoValida(char str[]) {
 }
 
 //Continuar a partir da linha 73 //
+
+int main() {
+    char expressao[200];
+
+    printf("Digite a expressao: ");
+    fgets(expressao, sizeof(expressao), stdin);
+
+    expressao[strcspn(expressao, "\n")] = '\0';
+
+    if (expressaoValida(expressao)) {
+        printf("Expressao valida.\n");
+    } else {
+        printf("Expressao invalida.\n");
+    }
+
+    return 0;
+}
+
+// Finalizado //
