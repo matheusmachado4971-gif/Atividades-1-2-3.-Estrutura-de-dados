@@ -38,6 +38,27 @@ void enqueuePrioridade(FilaPrioridade *fila, int id, int paginas, int prioridade
         return;
     }
 
+    Documento *atual = fila->inicio;
+
+    while (atual->prox != NULL && atual->prox->prioridade <= prioridade) {
+        atual = atual->prox;
+    }
+
+    novo->prox = atual->prox;
+    atual->prox = novo;
+}
+
+Documento *dequeue(FilaPrioridade *fila) {
+    if (filaVazia(fila)) {
+        return NULL;
+    }
+
+    Documento *removido = fila->inicio;
+    fila->inicio = fila->inicio->prox;
+    removido->prox = NULL;
+
+    return removido;
+}
 
     // continuar a partir da linha 61 Ativ3Desafio2//
 
