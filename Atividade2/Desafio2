@@ -44,3 +44,28 @@ char pop(Pilha *p) {
     return valor;
 }
 //continuar a partir da linha 45 do desafio2//
+
+int main() {
+    char texto[200];
+    Pilha p;
+
+    inicializar(&p);
+
+    printf("Digite uma string: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    texto[strcspn(texto, "\n")] = '\0';
+
+    for (int i = 0; texto[i] != '\0'; i++) {
+        push(&p, texto[i]);
+    }
+
+    printf("String invertida: ");
+    while (!isEmpty(&p)) {
+        printf("%c", pop(&p));
+    }
+    printf("\n");
+
+    return 0;
+}
+// Finalizado //
