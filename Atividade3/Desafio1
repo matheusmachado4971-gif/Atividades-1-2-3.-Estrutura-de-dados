@@ -42,3 +42,20 @@ void enqueue(Fila *fila, int id, int tempoAtendimento) {
 }
 
 //Continuar a partir da linha 42 Ativ3Desafio1//
+
+Cliente *dequeue(Fila *fila) {
+    if (filaVazia(fila)) {
+        return NULL;
+    }
+
+    Cliente *removido = fila->inicio;
+    fila->inicio = fila->inicio->prox;
+
+    if (fila->inicio == NULL) {
+        fila->fim = NULL;
+    }
+
+    return removido;
+}
+
+// Continuar a partir da linha 59 Ativ3Desafio1 //
